@@ -452,6 +452,99 @@
       color: var(--accent2);
     }
 
+    /* CERTIFICATIONS */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .cert-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent3), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .cert-card:hover {
+      border-color: var(--border2);
+      transform: translateY(-3px);
+    }
+
+    .cert-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .cert-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .cert-badge {
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      color: var(--accent2);
+      font-weight: 500;
+    }
+
+    .cert-icon {
+      font-size: 1.5rem;
+    }
+
+    .cert-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .cert-issuer {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .cert-btn {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent2);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .cert-btn:hover {
+      color: var(--text);
+    }
+
     /* EXPERIENCE */
     .timeline {
       position: relative;
@@ -750,6 +843,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -771,6 +865,11 @@
       </p>
       <div class="hero-cta">
         <a href="#contact" class="btn-primary">Get in touch →</a>
+        <a href="krijan_raigai_cv.pdf" download class="btn-secondary" style="border-color: var(--accent2); color: var(--accent2); display: inline-flex; align-items: center; gap: 6px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
+          </svg>Download CV
+        </a>
         <a href="#projects" class="btn-secondary">View my work</a>
       </div>
     </div>
@@ -832,6 +931,14 @@
             <div class="stat-label">Years experience</div>
           </div>
           <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Projects shipped</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Certified skills</div>
+          </div>
+          <div class="stat-card">
             <div class="stat-number">2026</div>
             <div class="stat-label">Expected graduation</div>
           </div>
@@ -860,8 +967,7 @@
           <div class="skill-desc">Building functional applications with clean, maintainable code. Focused on practical
             solutions and good architecture.</div>
           <div class="skill-tags">
-            <span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">Python</span><span
-              class="tag">Java</span>
+            <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span><span class="tag">Dart/Flutter</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">Python</span><span class="tag">Java</span>
           </div>
         </div>
         <div class="skill-card reveal">
@@ -889,7 +995,7 @@
           <div class="skill-desc">Certified in Software Quality Assurance — ensuring reliable, well-tested software
             through structured testing practices.</div>
           <div class="skill-tags">
-            <span class="tag">SQA</span><span class="tag">Testing</span><span class="tag">Documentation</span>
+            <span class="tag">SQA</span><span class="tag">Testing</span><span class="tag">Playwright</span><span class="tag">Documentation</span>
           </div>
         </div>
         <div class="skill-card reveal">
@@ -910,6 +1016,45 @@
             <span class="tag">Sales Strategy</span><span class="tag">Digital Marketing</span><span
               class="tag">Growth</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="section-inner">
+      <p class="section-label reveal">Certifications</p>
+      <h2 class="section-title reveal">Professional Qualifications</h2>
+      <p class="section-sub reveal">Verified certificates demonstrating specialized technical and business expertise.</p>
+
+      <div class="certs-grid">
+        <!-- Software Quality Assurance Card -->
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <span class="cert-badge">TestDome Certified</span>
+            <span class="cert-icon">✅</span>
+          </div>
+          <h3 class="cert-name">Software Quality Assurance</h3>
+          <p class="cert-issuer">Issued by TestDome</p>
+          <a href="https://www.testdome.com/certificates/8ccad254d9c7481d8c6a916879b702bf" target="_blank" class="cert-btn">
+            View Certificate →
+          </a>
+        </div>
+
+        <!-- MS Excel Card -->
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <span class="cert-badge">TestDome Certified</span>
+            <span class="cert-icon">📊</span>
+          </div>
+          <h3 class="cert-name">MS Excel</h3>
+          <p class="cert-issuer">Issued by TestDome</p>
+          <a href="https://www.testdome.com/certificates/b81fe67274464208bba4f19a2b6423af" target="_blank" class="cert-btn">
+            View Certificate →
+          </a>
         </div>
       </div>
     </div>
@@ -954,41 +1099,66 @@
       <p class="section-sub reveal">Academic and personal projects focused on solving real problems.</p>
 
       <div class="projects-grid">
+        <!-- Project 1 -->
         <div class="project-card reveal">
           <div class="project-num">01 — Web Development</div>
           <div class="project-title">E-Commerce Platform</div>
           <div class="project-desc">A full-featured online shopping platform with product listings, cart management,
             user authentication, and a clean, responsive UI. Focused on practical UX and maintainable code architecture.
           </div>
-          <div class="project-stack"
-            style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 1.25rem;">
-            <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">Backend</span>
+          <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--border); padding-top: 1.25rem;">
+            <div class="project-stack" style="margin-top: 0; padding-top: 0; border: none;">
+              <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">Backend</span>
+            </div>
+            <a href="https://github.com/Mrlunitic/ecommerce" target="_blank"
+              style="color: var(--accent2); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;"
+              onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--accent2)'">View Code ↗</a>
           </div>
         </div>
+
+        <!-- Project 2 -->
         <div class="project-card reveal">
           <div class="project-num">02 — App Development</div>
-          <div class="project-title">Location-Based Service App</div>
-          <div class="project-desc">An application that connects users with nearby services based on their location.
-            Features geolocation, search filtering, and an intuitive interface built for everyday practical use.</div>
-          <div class="project-stack"
-            style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 1.25rem;">
-            <span class="tag">Geolocation</span><span class="tag">UI Design</span><span class="tag">Mobile-First</span>
+          <div class="project-title">MotoCare — Smart Motorcycle Service App</div>
+          <div class="project-desc">A motorcycle maintenance companion app that collects bike info from users and gives personalized care suggestions. Sends push notifications when service is due, detects nearby service centers via GPS, allows booking of service appointments, and offers pickup & drop from the customer's location.</div>
+          <div class="project-stack" style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 1.25rem;">
+            <span class="tag">Geolocation</span><span class="tag">Push Notifications</span><span class="tag">Booking System</span><span class="tag">Mobile App</span>
           </div>
         </div>
+
+        <!-- Project 3 -->
         <div class="project-card reveal">
           <div class="project-num">03 — Game Development</div>
           <div class="project-title">Bagh Chal (Bagcha) Game</div>
           <div class="project-desc">A digital recreation of the traditional Nepalese board game 'Bagh Chal' (Tigers and
             Goats). Built with a responsive game board, complete game rules, and interactive moves.</div>
-          <div
-            style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--border); padding-top: 1.25rem;">
+          <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--border); padding-top: 1.25rem;">
             <div class="project-stack" style="margin-top: 0; padding-top: 0; border: none;">
               <span class="tag">Game Dev</span><span class="tag">JavaScript</span><span class="tag">State Logic</span>
             </div>
-            <a href="https://github.com/Mrlunitic/bagcha" target="_blank"
+            <a href="https://github.com/Mrlunitic/bagchal" target="_blank"
               style="color: var(--accent2); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;"
-              onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--accent2)'">View Code
-              ↗</a>
+              onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--accent2)'">View Code ↗</a>
+          </div>
+        </div>
+
+        <!-- Project 4 (NEW) -->
+        <div class="project-card reveal">
+          <div class="project-num">04 — Web Application</div>
+          <div class="project-title">HR Demo</div>
+          <div class="project-desc">A modern TypeScript and React-based HR management web application built for seamless employee onboarding, role tracking, and compliance management. Complete with an interactive dashboard, clean UI, and responsive layouts.</div>
+          <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--border); padding-top: 1.25rem;">
+            <div class="project-stack" style="margin-top: 0; padding-top: 0; border: none;">
+              <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Tailwind</span><span class="tag">Playwright</span><span class="tag">Vite</span>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <a href="https://github.com/Mrlunitic/Hrdemo" target="_blank"
+                style="color: var(--accent2); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;"
+                onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--accent2)'">GitHub ↗</a>
+              <a href="https://hrdemo.vercel.app" target="_blank"
+                style="color: var(--accent3); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;"
+                onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--accent3)'">Live Demo ↗</a>
+            </div>
           </div>
         </div>
       </div>
