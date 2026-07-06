@@ -121,10 +121,10 @@
 
     :root {
       --bg: #0a0a0f;
-      --surface: #111118;
-      --surface2: #1a1a24;
-      --border: rgba(255, 255, 255, 0.07);
-      --border2: rgba(255, 255, 255, 0.12);
+      --surface: rgba(20, 20, 30, 0.5);
+      --surface2: rgba(30, 30, 45, 0.6);
+      --border: rgba(255, 255, 255, 0.1);
+      --border2: rgba(255, 255, 255, 0.18);
       --text: #f0eefc;
       --muted: #8884a8;
       --accent: #7c6ef5;
@@ -144,6 +144,25 @@
       font-weight: 300;
       line-height: 1.7;
       overflow-x: hidden;
+    }
+
+    
+    /* AMBIENT ORBS */
+    .ambient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: -1;
+      opacity: 0.5;
+      pointer-events: none;
+      animation: floatOrb 10s infinite alternate ease-in-out;
+    }
+    .orb-1 { width: 400px; height: 400px; background: var(--accent); top: 10%; left: -100px; }
+    .orb-2 { width: 350px; height: 350px; background: var(--accent3); top: 40%; right: -50px; }
+    .orb-3 { width: 500px; height: 500px; background: rgba(124,110,245,0.4); bottom: 10%; left: 20%; }
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(50px, 50px) scale(1.1); }
     }
 
     /* NAV */
@@ -460,6 +479,8 @@
     }
 
     .stat-card {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
@@ -493,6 +514,8 @@
     }
 
     .skill-card {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
@@ -574,6 +597,8 @@
     }
 
     .cert-card {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
@@ -675,6 +700,12 @@
     }
 
     .timeline-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem 1.5rem 1.5rem 3rem;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       position: relative;
       margin-bottom: 3rem;
       padding-left: 2rem;
@@ -683,7 +714,7 @@
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -2.35rem;
+      left: -1rem;
       top: 6px;
       width: 10px;
       height: 10px;
@@ -727,6 +758,8 @@
     }
 
     .project-card {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
@@ -773,6 +806,8 @@
 
     /* EDUCATION */
     .edu-card {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
@@ -1092,14 +1127,21 @@
     <a href="#" class="nav-logo">KR<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     </nav>
   </header>
+
+  <!-- AMBIENT ORBS -->
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
 
   <!-- MAIN CONTENT -->
   <main>
@@ -1199,6 +1241,41 @@
             <div class="stat-number">KTM</div>
             <div class="stat-label">Based in Nepal</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-inner">
+      <p class="section-label reveal">Services</p>
+      <h2 class="section-title reveal">What I Do</h2>
+      <p class="section-sub reveal">Delivering high-quality solutions across multiple disciplines.</p>
+
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="skill-icon" style="font-size:2rem; width:60px; height:60px;">🤖</div>
+          <h3 class="project-title">QA Automation & Testing</h3>
+          <p class="project-desc">End-to-end software testing using Selenium, Playwright, and Java. API validation with Postman, ensuring zero-defect product launches.</p>
+        </div>
+        <div class="project-card reveal">
+          <div class="skill-icon" style="font-size:2rem; width:60px; height:60px;">💻</div>
+          <h3 class="project-title">Web Development</h3>
+          <p class="project-desc">Building responsive, high-performance websites and web applications tailored for users in Nepal and globally.</p>
+        </div>
+        <div class="project-card reveal">
+          <div class="skill-icon" style="font-size:2rem; width:60px; height:60px;">🎨</div>
+          <h3 class="project-title">Graphic Design</h3>
+          <p class="project-desc">Crafting stunning visual assets, UI/UX mockups, and marketing materials using Photoshop and Canva.</p>
+        </div>
+        <div class="project-card reveal">
+          <div class="skill-icon" style="font-size:2rem; width:60px; height:60px;">🎧</div>
+          <h3 class="project-title">Technical Support</h3>
+          <p class="project-desc">Expert technical diagnostics and customer support, managing networks, GPON, and live chat platforms.</p>
         </div>
       </div>
     </div>
@@ -1472,6 +1549,65 @@
 
   <hr class="divider">
 
+  
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="section-inner">
+      <p class="section-label reveal">Testimonials</p>
+      <h2 class="section-title reveal">What People Say</h2>
+      
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <p class="project-desc" style="font-style: italic;">"Krijan is an exceptional QA Engineer. His attention to detail in automation testing saved our team countless hours and prevented major bugs from hitting production."</p>
+          <div style="display:flex; gap:1rem; align-items:center;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-weight:bold;">S</div>
+            <div>
+              <div style="font-weight:bold;">Senior Developer</div>
+              <div style="font-size:0.8rem; color:var(--muted);">Tech Corp</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <p class="project-desc" style="font-style: italic;">"Working with Krijan on our web project was a breeze. He not only designed a beautiful interface but ensured it was perfectly responsive and accessible."</p>
+          <div style="display:flex; gap:1rem; align-items:center;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--accent3); display:flex; align-items:center; justify-content:center; font-weight:bold;">P</div>
+            <div>
+              <div style="font-weight:bold;">Project Manager</div>
+              <div style="font-size:0.8rem; color:var(--muted);">Creative Agency</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- BLOG -->
+  <section id="blog">
+    <div class="section-inner">
+      <p class="section-label reveal">Blog</p>
+      <h2 class="section-title reveal">Latest Insights</h2>
+      
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-num">Article</div>
+          <h3 class="project-title">The Future of QA Automation in 2026</h3>
+          <p class="project-desc">Exploring how AI and modern tools like Playwright are reshaping the software testing landscape.</p>
+          <a href="#" class="cert-btn">Read More →</a>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-num">Article</div>
+          <h3 class="project-title">Web Performance Optimization</h3>
+          <p class="project-desc">A deep dive into Core Web Vitals, SEO, and achieving a 100/100 Lighthouse score.</p>
+          <a href="#" class="cert-btn">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
   <!-- EDUCATION -->
   <section id="education">
     <div class="section-inner">
@@ -1491,6 +1627,22 @@
           </div>
         </div>
       </div>
+  </section>
+
+  <hr class="divider">
+
+  
+  <!-- RESUME -->
+  <section id="resume">
+    <div class="section-inner" style="text-align:center;">
+      <h2 class="section-title reveal">Ready to dive deeper?</h2>
+      <p class="section-sub reveal" style="margin: 0 auto 2rem;">Get a full overview of my career, skills, and education by downloading my official resume.</p>
+      <a href="krijan_raigai_cv.pdf" download class="btn-primary reveal" style="padding: 1rem 2.5rem; font-size: 1rem;">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
+        </svg> Download Resume
+      </a>
+    </div>
   </section>
 
   <hr class="divider">
