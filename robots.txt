@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://krijanraigai.com.np/sitemap.xml
